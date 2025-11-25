@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rules_for_salesperson_own_document" model="ir.rule">
+            <field name="name">branch wise journals</field>
+            <field name="model_id" ref="account.model_account_journal"/>
+            <field name="domain_force">['|',('branch_id','in',user.branch_ids.ids), ('branch_id','=',False)]</field>
+            <!-- <field name="groups" eval="[(4, ref('account.group_account_invoice'))]" /> -->
+        </record>
+        <record id="branch_journal_inherited" model="ir.ui.view">
+            <field name="name">Branch journals form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="branch_id"
+                    options='{"no_open": True,"no_create": 1, "no_create_edit": 1}'
+                    required="0" invisible="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
