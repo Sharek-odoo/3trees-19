@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Added branch_id in partner form-->
+    <record id="view_form_partner_custom_inherit_branch" model="ir.ui.view">
+        <field name="name">partner.view.form.inherit.branch</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="after">
+                <page string="Branch" name="branch"
+                    groups="iwesabe_branch_management.group_branch_user">
+                    <group>
+                        <group string="Branch Information" name="branch">
+                            <field name="branch_id"
+                                options='{"no_open": True,"no_create": 1, "no_create_edit": 1}' required="0" />
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
