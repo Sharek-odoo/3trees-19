@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_form_bi_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.bi.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group" position="inside">
+                    <field name="operation_manager_id"/>
+                </xpath>
+                <xpath
+                        expr="//notebook/page/field[@name='order_line']/list/field[@name='product_qty']"
+                        position="after">
+                    <field name="discount" column_invisible="1"/>
+                </xpath>
+
+                <xpath expr="//notebook/page[1]/group[1]/group[2]/field[@name='tax_totals']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[1]/group[1]/group[2]/field[@name='tax_totals']" position="before">
+                    <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"
+                           string="Untaxed Amount" />
+                    <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"
+                           string="Taxes" />
+                    <field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+                           string="Discount"/>
+                    <field name="amount_total" widget="monetary" options="{'currency_field': 'currency_id'}"
+                           string="Total" decoration-bf="1" class="o_list_monetary"/>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
