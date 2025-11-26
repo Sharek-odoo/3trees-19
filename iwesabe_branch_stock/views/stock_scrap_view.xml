@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Scrap Tree view-->
+        <record id="view_branch_scrap_tree_inherit" model="ir.ui.view">
+            <field name="name">view.scrap.tree.branch.inherit</field>
+            <field name="model">stock.scrap</field>
+            <field name="inherit_id" ref="stock.stock_scrap_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="location_id" position="before">
+                    <field name="branch_id"/>
+                </field>
+            </field>
+        </record>
+
+        <!--Scrap form view-->
+        <record id="stock_scrap_form_view_branch_inherit" model="ir.ui.view">
+            <field name="name">view.stock.scrap.form.inherit.branch</field>
+            <field name="model">stock.scrap</field>
+            <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+            <field name="arch" type="xml">
+                <field name="location_id" position="before">
+                    <field name="branch_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

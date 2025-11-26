@@ -4,7 +4,7 @@
     'category': 'purchase',
     'summary': 'This apps help to define a discount per line in the purchase orders.',
     'author': '',
-    'depends': ['base','purchase','stock'],
+    'depends': ['base','purchase','purchase_stock'],
     'data': [
             'views/purchase.xml',
             'views/res_config_setting_view.xml',

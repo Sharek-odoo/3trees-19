@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Added branch_id in employee form-->
+    <record id="view_form_hr_employee_custom_inherit_branch" model="ir.ui.view">
+        <field name="name">hr.employee.view.form.iw.addamegh.inherit.branch</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="branch_id"
+                       options='{"no_open": True,"no_create": 1, "no_create_edit": 1}'
+                       required="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

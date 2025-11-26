@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.rule" id="stock_picking_type_branch_rule">
+            <field name="name">Stock Picking Type Multi Branch</field>
+            <field name="model_id" ref="stock.model_stock_picking_type" />
+            <field name="domain_force">
+                ['|',('branch_id','=',False),('branch_id', 'in', user.branch_ids.ids)]
+            </field>
+        </record>
+        <record model="ir.rule" id="stock_picking_branch_rule">
+            <field name="name">Stock Picking Multi Branch</field>
+            <field name="model_id" ref="stock.model_stock_picking" />
+            <field name="domain_force">
+                ['|',('branch_id','=',False),('branch_id', 'in', user.branch_ids.ids)]
+            </field>
+        </record>
+        <record model="ir.rule" id="stock_location_branch_rule">
+            <field name="name">Stock Location Multi Branch</field>
+            <field name="model_id" ref="stock.model_stock_location" />
+            <field name="domain_force">
+                ['|',('branch_id','=',False),('branch_id', 'in', user.branch_ids.ids)]
+            </field>
+        </record>
+        <record model="ir.rule" id="stock_move_branch_rule">
+            <field name="name">Stock Move Multi Branch</field>
+            <field name="model_id" ref="stock.model_stock_move" />
+            <field name="domain_force">
+                ['|',('branch_id','=',False),('branch_id', 'in', user.branch_ids.ids)]
+            </field>
+        </record>
+        <record model="ir.rule" id="stock_warehouse_branch_rule">
+            <field name="name">Stock Warehouse Multi Branch</field>
+            <field name="model_id" ref="stock.model_stock_warehouse" />
+            <field name="domain_force">
+                ['|',('branch_id','=',False),('branch_id', 'in', user.branch_ids.ids)]
+            </field>
+        </record>
+
+    </data>
+</odoo>
