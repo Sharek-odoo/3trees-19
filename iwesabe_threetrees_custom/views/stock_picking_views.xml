@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_picking_form_inherit_mrp" model="ir.ui.view">
+        <field name="name">view.picking.form.inherit.mrp</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="vehicle" 
+                    invisible="picking_type_id not in ('outgoing','internal')"/>
+                <field name="city" 
+                    invisible="picking_type_id not in ('outgoing','internal')"/>
+                <field name="driver_id" invisible="picking_type_id not in ('outgoing','internal')"/>
+                <field name="mobile" invisible="picking_type_id not in ('outgoing','internal')"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

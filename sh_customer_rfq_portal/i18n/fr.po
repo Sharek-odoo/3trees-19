@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_customer_rfq_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-18 10:09+0000\n"
+"PO-Revision-Date: 2021-01-18 10:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "<strong>Success!</strong>"
+msgstr "<strong>Succès!</strong>"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Action"
+msgstr "action"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Add Product"
+msgstr "Ajouter du produit"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Description"
+msgstr "La description"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Invoice Address"
+msgstr "Adresse de facturation"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Product"
+msgstr "Produit"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Product Image"
+msgstr "Image de produit"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.portal_my_home_customer_rfq
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.portal_my_home_menu_customer_rfq
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Request Product"
+msgstr "Demande de produit"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Select Product"
+msgstr "Sélectionner un produit"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Send Request"
+msgstr "Envoyer une demande"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Shipping Address"
+msgstr "Adresse de livraison"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Total QTY"
+msgstr "Quantité totale"

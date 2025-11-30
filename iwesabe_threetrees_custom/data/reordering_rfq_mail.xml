@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- email template for create rfq from reordering rule -->
+        <record id="mail_template_rfq_created" model="mail.template">
+            <field name="name">Purchase: RFQ Created</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">Reordering RFQ Created</field>
+            <field name="email_from">{{ (object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="description">Sent to purchase user on create reordering rule</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 12px;">
+                        <p>Hello,</p>
+                        <p>From Reordering RFQ has been created.</p>
+                        <p>RFQ Reference: <t t-esc="object.name"/></p>
+                        <p>Thank you.</p>
+                    </p>
+                </div>
+            </field>
+            <field name="lang">{{ object.user_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>
