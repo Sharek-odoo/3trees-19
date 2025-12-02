@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_customer_rfq_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-18 10:09+0000\n"
+"PO-Revision-Date: 2021-01-18 10:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "<strong>Success!</strong>"
+msgstr "<strong>成功！</strong>"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Action"
+msgstr "行动"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Add Product"
+msgstr "添加产品"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Description"
+msgstr "描述"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Invoice Address"
+msgstr "发票地址"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Product"
+msgstr "产品"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Product Image"
+msgstr "产品映像"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.portal_my_home_customer_rfq
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.portal_my_home_menu_customer_rfq
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Request Product"
+msgstr "要求产品"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Select Product"
+msgstr "选择产品"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Send Request"
+msgstr "发送请求"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Shipping Address"
+msgstr "送货地址"
+
+#. module: sh_customer_rfq_portal
+#: model_terms:ir.ui.view,arch_db:sh_customer_rfq_portal.sh_portal_request_customer_rfq_product
+msgid "Total QTY"
+msgstr "总数量"
