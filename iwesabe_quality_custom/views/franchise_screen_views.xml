@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="franchise_screen_view" model="ir.ui.view">
+            <field name="name">franchise.screen.tree.views</field>
+            <field name="model">franchise.screen</field>
+            <field name="arch" type="xml">
+                 <list string="Franchise Screen">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="franchise_screen_form_view" model="ir.ui.view">
+            <field name="name">franchise.screen.form.views</field>
+            <field name="model">franchise.screen</field>
+            <field name="arch" type="xml">
+                 <form string="Franchise Screen">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="franchise_screen_action" model="ir.actions.act_window">
+            <field name="name">franchise</field>
+            <field name="res_model">franchise.screen</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" ref="franchise_screen_view"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_branch_screen,branch.screen,model_branch_screen,base.group_user,1,1,1,1
+access_franchise_screen,franchise.screen,model_franchise_screen,base.group_user,1,1,1,1

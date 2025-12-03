@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_quality_root_branchise"
+        name="Franchise"
+        action="iwesabe_quality_custom.franchise_screen_action"
+        parent="quality_control.menu_quality_root"
+    />
+    <menuitem
+        id="menu_quality_root_branch"
+        name="Branch"
+        action="iwesabe_quality_custom.branch_screen_action"
+        parent="quality_control.menu_quality_root"
+    />
+</odoo>
