@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_bom_line_form_inherited" model="ir.ui.view">
+        <field name="name">mrp.bom.line.form.inherited</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bom_line_ids']/list/field[@name='product_qty']" position="before">
+                <field name="net_quantity"/>
+                <field name="loss_percentage"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
