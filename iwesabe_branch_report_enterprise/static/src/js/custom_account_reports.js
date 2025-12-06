@@ -116,10 +116,10 @@ odoo.define('iwesabe_branch_report_enterprise.account_report_generic', function 
             });
         },
     });
-    
+
     accountReportsWidget.accountReportsWidget.include({
-        
-        events: _.extend({}, 
+
+        events: _.extend({},
             // Check if accountReportsWidget.prototype is defined
             (accountReportsWidget.accountReportsWidget.prototype ? accountReportsWidget.accountReportsWidget.prototype.events : {}),
             {
@@ -128,7 +128,7 @@ odoo.define('iwesabe_branch_report_enterprise.account_report_generic', function 
             }
         ),
 
-        custom_events: _.extend({}, 
+        custom_events: _.extend({},
             // Check if accountReportsWidget.prototype is defined
             (accountReportsWidget.accountReportsWidget.prototype ? accountReportsWidget.accountReportsWidget.prototype.custom_events : {}),
             {

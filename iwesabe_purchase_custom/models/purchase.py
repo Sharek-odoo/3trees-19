@@ -213,7 +213,7 @@ class StockMove(models.Model):
                 discounted_unit_cost = move.purchase_line_id.price_unit * (1 - (move.purchase_line_id.discount / 100.0))
 
                 # Find and update the stock valuation layer
-                valuation_layers = self.env['stock.valuation.layer'].search([('stock_move_id', '=', move.id)])
+                valuation_layers = self.env['product.value'].search([('move_id', '=', move.id)])
                 for valuation_layer in valuation_layers:
                     valuation_layer.unit_cost = discounted_unit_cost
 

@@ -45,7 +45,7 @@ class StockPicking(models.Model):
     def update_adjustment_moves(self):
         for picking in self:
             src_loc = picking.location_id
-            for move in picking.move_ids_without_package:
+            for move in move_ids:
                 product = move.product_id
                 # on hand في موقع المصدر
                 onhand = product.with_context(location=src_loc.id).qty_available or 0.0

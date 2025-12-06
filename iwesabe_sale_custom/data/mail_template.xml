@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mail_template_sale_confirmation_inventory" model="mail.template">
+            <field name="name">Sales: Order Confirmation Inventory</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">Sale Order Confirmed - Action Required in Inventory</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="description">Sent automatically to inventory users when sale order confirm</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;font-size: 13px;">
+                    <p>Hello <t t-out="object.user_id.name or ''"/>,</p>
+                    <p>This is to inform you that a new sale order has been confirmed and requires your attention in the inventory.</p>
+                    <p>Sale Order Details :</p>
+                    <ul>
+                        <li>Order Reference: <span t-field="object.name"/></li>
+                        <li>Customer: <span t-field="object.partner_id.name"/></li>
+                        <li>Total Amount: <span t-field="object.amount_total"/></li>
+                    </ul>
+                    <a class="btn btn-primary" t-if="object.url" t-att-href="object.url" style="text-decoration:none;">Delivery Note</a>
+                    <br/>
+                    <p>Please review and take necessary actions in the inventory system.</p>
+                    <br/>
+                    <p>Thank you,</p>
+                    <p><t t-esc="env.company.name"/></p>
+                </div>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="mail_template_delivery_confirmation_customer" model="mail.template">
+            <field name="name">Delivery: Confirmation Mail Customer</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="subject">Order Delivery Confirmation - {{ (object.origin) }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="description">Sent automatically to customers when delivery confirm</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;font-size: 13px;">
+                    <p>Dear <t t-if="object.sale_id" t-esc="object.sale_id.partner_id.name"/>,</p>
+                    <p>We are pleased to inform you that your order #<t t-if="object.sale_id" t-esc="object.sale_id.name"/> delivery confirmed. We hope you are delighted with your purchase.</p>
+                    <p>Delivery Details:</p>
+                    <ul>
+                        <li>Order Number:<span t-if="object.sale_id" t-field="object.sale_id.name"/></li>
+                        <li>Delivery Date: <span t-field="object.scheduled_date"/></li>
+                    </ul>
+                    <p>If you have any questions or concerns regarding your delivery, please do not hesitate to contact our customer support team.</p>
+                    <p>Thank you for choosing <t t-esc="object.company_id.name"/>. We appreciate your business and look forward to serving you again in the future.</p>
+                    <br/>
+                    <p>Best regards,</p>
+                    <p><t t-esc="env.company.name"/></p>
+                </div>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="mail_template_delivery_confirmation_accountant" model="mail.template">
+            <field name="name">Delivery: Confirmation Mail Accountant</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="subject">Order Delivery Confirmation - {{ (object.origin) }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="description">Sent automatically to account users when delivery confirm</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;font-size: 13px;">
+                    <p>Dear <t t-out="object.user_id.name or ''"/>,</p>
+                    <p>We hope this message finds you well. We are writing to inform you that a new delivery has been validated. This is to ensure that you are kept up-to-date with the latest transactions.</p>
+                    <p>Details of the validated delivery are as follows:</p>
+                    <ul>
+                        <li>Delivery Reference:<span t-field="object.name"/></li>
+                        <li>Customer:<span t-if="object.sale_id" t-field="object.sale_id.name"/></li>
+                        <li>Delivery Date: <span t-field="object.scheduled_date"/></li>
+                    </ul>
+                    <p>Please review the delivery details and update the necessary records in the accounting system accordingly. If you have any questions or if further clarification is needed, feel free to reach out to the relevant department or contact person.</p>
+                    <p>Thank you for your attention to this matter.</p>
+                    <br/>
+                    <p>Best regards,</p>
+                    <p><t t-esc="env.company.name"/></p>
+                </div>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,30 +1,32 @@
-import { _t } from "@web/core/l10n/translation";
-import { patch } from "@web/core/utils/patch";
-import { AccountReportFilters } from "@account_reports/components/account_report/filters/filters";
+/** @odoo-module **/
 
-patch(AccountReportFilters.prototype, {
-    get filterExtraOptionsData() {
+import { registry } from "@web/core/registry";
+import {
+    Many2ManyTagsField,
+    many2ManyTagsField,
+} from "@web/views/fields/many2many_tags/many2many_tags_field";
+
+export class Many2ManyTagsBranch extends Many2ManyTagsField {
+    static template = "iwesabe_branch.Many2ManyTagsBranch";
+
+    getTagProps(record) {
         return {
-            ...super.filterExtraOptionsData,
-            'report_cash_basis': {
-                'name': _t("Cash Basis Method"),
-                'group': 'account_user',
-                'show': this.controller.filters.show_cash_basis,
-            },
+            ...super.getTagProps(record),
+            text: record.data.display_name,
         };
-    },
+    }
+}
 
-    get selectedExtraOptions() {
-        let selectedExtraOptionsName = super.selectedExtraOptions;
-        if (this.controller.filters.show_cash_basis) {
-            const cashBasisFilterName = this.controller.cachedFilterOptions.report_cash_basis
-                ? _t("Cash Basis")
-                : _t("Accrual Basis");
+export const fieldMany2ManyTagsBranch = {
+    ...many2ManyTagsField,
+    component: Many2ManyTagsBranch,
+    relatedFields: (fieldInfo) => [
+        ...many2ManyTagsField.relatedFields(fieldInfo),
+        { name: "display_name", type: "char" },
+    ],
+};
 
-            selectedExtraOptionsName = selectedExtraOptionsName
-                ? `${selectedExtraOptionsName}, ${cashBasisFilterName}`
-                : cashBasisFilterName;
-        }
-        return selectedExtraOptionsName;
-    },
-});
+registry.category("fields").add(
+    "many2many_tags_branch",
+    fieldMany2ManyTagsBranch
+);

@@ -28,20 +28,23 @@
     'author': 'iWesabe',
     'website': 'https://www.iwesabe.com',
     "depends": [
-        'account', 
-        'account_accountant', 
-        'account_reports', 
+        'account',
+        'account_accountant',
+        'account_reports',
         'iwesabe_branch_management',
         'iwesabe_branch_account'
     ],
     "data": [
-        'views/template_view.xml',
+        # 'views/template_view.xml',
+        'data/balance_sheet.xml',
+        'views/account_report_view.xml',
     ],
     'assets': {
         'web.assets_backend': [
             'iwesabe_branch_report_enterprise/static/src/js/custom_account_reports.js'
+'iwesabe_branch_report_enterprise/static/src/components/branch_report/filters.js'
         ],
-        
+
     },
     'license': 'AGPL-3',
     'installable': True,

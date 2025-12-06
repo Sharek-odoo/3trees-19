@@ -16,7 +16,7 @@ class StockPicking(models.Model):
         if self.company_id.l4l_allow_back_date:
             for picking in self:
                 picking.date_done = picking.scheduled_date
-                for move in picking.move_ids_without_package:
+                for move in picking.move_ids:
                     move.write({
                         'date': picking.scheduled_date,
                         'date_deadline': picking.scheduled_date,
@@ -24,7 +24,7 @@ class StockPicking(models.Model):
                     move.move_line_ids.write({
                         'date': picking.scheduled_date,
                     })
-                    val_layer_ids = self.env['stock.valuation.layer'].search([('stock_move_id', '=', move.id)])
+                    val_layer_ids = self.env['product.value'].search([('move_id', '=', move.id)])
                     if val_layer_ids:
                         query = """update stock_valuation_layer set create_date ='""" + str(picking.scheduled_date) + """' where id in %s"""
                         params = (tuple(val_layer_ids.ids),)
