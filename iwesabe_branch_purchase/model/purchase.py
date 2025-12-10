@@ -22,7 +22,7 @@
 
 from odoo import models, api, fields, _
 from odoo.exceptions import UserError
-from odoo.addons.purchase.models.purchase import PurchaseOrder as Purchase
+# from odoo.addons.purchase.models.purchase import PurchaseOrder as Purchase
 
 
 class PurchaseOrder(models.Model):
