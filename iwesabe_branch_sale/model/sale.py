@@ -65,7 +65,7 @@ class SaleOrder(models.Model):
             if user_branch and branched_warehouse:
                 self.warehouse_id = branched_warehouse.id
             else:
-                warehouse_id = self.env['ir.default'].get_model_defaults(
+                warehouse_id = self.env['ir.default']._get_model_defaults(
                     'sale.order'
                 ).get('warehouse_id')
                 self.warehouse_id = warehouse_id or self.user_id.with_company(
