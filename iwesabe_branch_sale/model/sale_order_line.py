@@ -112,8 +112,8 @@ class SaleOrderLine(models.Model):
             and self.order_id.branch_id.id or False})
         return res
 
-    def _prepare_procurement_values(self, group_id=False):
-        res = super(SaleOrderLine, self)._prepare_procurement_values(group_id)
+    def _prepare_procurement_values(self):
+        res = super(SaleOrderLine, self)._prepare_procurement_values()
         res.update({'branch_id': self.order_id.branch_id \
             and self.order_id.branch_id.id or False})
         return res
