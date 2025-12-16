@@ -8,7 +8,6 @@
 
     'author': "Sharek",
     'website': "https://www.yourcompany.com",
-    'license': 'LGPL-3',
     'category': 'Inventory/Inventory Management',
     'version': '19.0',
 
@@ -17,7 +16,6 @@
         # 'security/ir.model.access.csv',
         'views/stock_views.xml',
     ],
-    "application": True,
-    "auto_install": False,
-    "installable": True,
+     'license': 'AGPL-3',
+    'installable': True,
 }
