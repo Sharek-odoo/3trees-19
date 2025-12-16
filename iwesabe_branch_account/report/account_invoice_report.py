@@ -22,13 +22,13 @@
 
 from odoo import tools
 from odoo import models, fields, api
-from odoo.osv.expression import SQL
+from odoo.tools import SQL
+
 
 class AccountInvoiceReport(models.Model):
     _inherit = "account.invoice.report"
 
-    branch_id = fields.Many2one('res.branch', string='Branch', related='move_id.branch_id', store=True)
+    branch_id = fields.Many2one('res.branch')
 
-    def _select(self):
-        return super()._select() + SQL(", move.branch_id as branch_id")
-
+    def _select(self) -> SQL:
+        return SQL("%s, move.branch_id as branch_id", super()._select())
