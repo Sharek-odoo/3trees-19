@@ -37,9 +37,9 @@
     'depends': ['purchase'],
     'data': [
         'views/res_partner_views.xml',
-        # 'views/product_supplierinfo_views.xml',
-        # 'views/purchase_order_views.xml',
-        # 'report/purchase_order_templates.xml'
+        'views/product_supplierinfo_views.xml',
+        'views/purchase_order_views.xml',
+        'report/purchase_order_templates.xml'
     ],
     'images': ['static/description/banner.jpg'],
     'license': 'AGPL-3',
