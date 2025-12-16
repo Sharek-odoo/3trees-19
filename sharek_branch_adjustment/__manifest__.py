@@ -9,7 +9,7 @@
     'author': "Sharek",
     'website': "https://www.sharek.com.sa",
     'category': 'Inventory/Inventory Management',
-    'version': '19.0',
+    'version': '19.0.0.1',
 
     'depends': ['stock'],
     'data': [
