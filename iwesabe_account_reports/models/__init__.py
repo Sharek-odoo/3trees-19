@@ -1,10 +1,10 @@
-# * coding: utf8 *
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Global Creative Concepts Tech Co Ltd.
-#    Copyright (C) 2018TODAY iWesabe (<http://www.iwesabe.com>).
+#    iWesabe.
+#    Copyright (C) 2018-TODAY iWesabe (<https://www.iwesabe.com>).
 #    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    GENERAL PUBLIC LICENSE (LGPL-3), Version 3.
 #
 #    It is forbidden to publish, distribute, sublicense, or sell copies
 #    of the Software or modified copies of the Software.
@@ -12,23 +12,17 @@
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL-3) for more details.
 #
 #    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    GENERAL PUBLIC LICENSE (LGPL v3) along with this program.
+#    GENERAL PUBLIC LICENSE (LGPL-3) along with this program.
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from odoo import tools
-from odoo import models, fields, api
-from odoo.osv.expression import SQL
-
-class AccountInvoiceReport(models.Model):
-    _inherit = "account.invoice.report"
-
-    branch_id = fields.Many2one('res.branch', string='Branch', related='move_id.branch_id', store=True)
-
-    def _select(self):
-        return super()._select() + SQL(", move.branch_id as branch_id")
+from . import account_reports
+from . import account_financial_html_report_line
+from . import account_partner_ledger
+from . import account_aged_partner
+from . import account_general_ledger
 

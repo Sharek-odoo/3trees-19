@@ -20,15 +20,22 @@
 #
 ##############################################################################
 
-from odoo import tools
-from odoo import models, fields, api
-from odoo.osv.expression import SQL
+from odoo import models, fields, api, _
+from odoo.tools import ustr, float_is_zero
+import ast
+from odoo.tools.safe_eval import safe_eval
 
-class AccountInvoiceReport(models.Model):
-    _inherit = "account.invoice.report"
 
-    branch_id = fields.Many2one('res.branch', string='Branch', related='move_id.branch_id', store=True)
+# class ReportAccountFinancialReport(models.Model):
+#     _inherit = "account.financial.html.report"
 
-    def _select(self):
-        return super()._select() + SQL(", move.branch_id as branch_id")
+#     filter_salesperson = True
 
+#     @api.model
+#     def _get_options_domain(self, options):
+#         domain = super(ReportAccountFinancialReport,
+#                        self)._get_options_domain(options)
+#         if options.get('salesperson') and options.get('salespersons'):
+#             salespersons = [int(salesperson) for salesperson in options['salespersons']]
+#             domain.append(('invoice_user_id', 'in', salespersons))
+#         return domain
