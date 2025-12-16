@@ -7,7 +7,7 @@
     'description': """""",
 
     'author': "Sharek",
-    'website': "https://www.yourcompany.com",
+    'website': "https://www.sharek.com.sa",
     'category': 'Inventory/Inventory Management',
     'version': '19.0',
 
