@@ -15,7 +15,7 @@
 				<xpath expr="//field[@name='move_ids']/list/field[@name='product_uom_qty']" position="before">
 					<field name="onhand_qty" column_invisible="parent.adjustment != True"/>
 					<field name="count_qty" column_invisible="parent.adjustment != True"/>
-					<field name="adjustment" invisible="1"/>
+					<field name="adjustment" column_invisible="1"/>
 				</xpath>
 				<xpath expr="//header" position="inside">
 					<button name="update_adjustment_moves" type="object" string="Update Moves" class="oe_highlight"
