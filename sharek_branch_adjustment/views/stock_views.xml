@@ -12,7 +12,7 @@
 				<xpath expr="//field[@name='owner_id']" position="after">
 					<field name="adjustment" widget="boolean_toggle" invisible="adjustment != True" readonly="1" force_save="1"/>
 				</xpath>
-				<xpath expr="//field[@name='move_ids_without_package']/list/field[@name='product_uom_qty']" position="before">
+				<xpath expr="//field[@name='move_ids']/list/field[@name='product_uom_qty']" position="before">
 					<field name="onhand_qty" column_invisible="parent.adjustment != True"/>
 					<field name="count_qty" column_invisible="parent.adjustment != True"/>
 					<field name="adjustment" invisible="1"/>
