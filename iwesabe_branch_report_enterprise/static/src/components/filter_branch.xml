@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="account_reports.AccountReportFilterBranch">
+        <Dropdown>
+            <button class="btn btn-secondary">
+                <i class="fa fa-folder-open me-1"/>Branch
+            </button>
+
+            <t t-set-slot="content">
+                <div class="dropdown-item gap-2 align-items-center">
+                    <label>Branch</label>
+                    <MultiRecordSelector t-props="getMultiRecordSelectorProps('res.branch', 'branch_ids')"/>
+                </div>
+            </t>
+        </Dropdown>
+    </t>
+</templates>

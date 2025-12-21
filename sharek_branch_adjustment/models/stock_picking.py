@@ -25,7 +25,7 @@ class StockPicking(models.Model):
                     'location_dest_id': self.location_dest_id.id,
                     'onhand_qty': product.with_context(location=self.location_id.id).qty_available,
                 }) for product in products]
-        self.move_ids_without_package = move_ids_without_package
+        self.move_ids = move_ids_without_package
         
     
     def action_picking_move_tree(self):
